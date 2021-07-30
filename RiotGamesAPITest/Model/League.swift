@@ -12,3 +12,7 @@ struct League: Codable {
     let tier: String
     let rank: String
 }
+
+extension League {
+    static let empty = League(queueType: "N/A", tier: "N/A", rank: "N/A")
+}

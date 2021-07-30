@@ -52,7 +52,11 @@ struct Repository {
                     let jsonData = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                     let leagues = try JSONDecoder().decode([League].self, from: jsonData)
                     
-                    completion(leagues)
+                    if leagues.isEmpty {
+                        completion([League.empty])
+                    } else {
+                        completion(leagues)
+                    }
                 } catch let err {
                     print(String(describing: err))
                 }
