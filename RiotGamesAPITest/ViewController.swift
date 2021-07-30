@@ -14,9 +14,14 @@ class ViewController: UIViewController {
         
         let repo = Repository()
         
-        // 현재 인게임을 진행중인 소환사명을 입력
+        // 인게임 소환사들의 정보 확인
         repo.spectator(ingameSummonerName: "n3bular") { spectator in
             print(spectator)
+        }
+        
+        // 소환사의 랭크 정보 확인
+        repo.leagues(summonerName: "n3bular") { leagues in
+            print(leagues)
         }
     }
 }

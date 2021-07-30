@@ -17,6 +17,7 @@
 		9EECA8B226AD0E0E002EF2CA /* HTTPNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECA8B126AD0E0E002EF2CA /* HTTPNetwork.swift */; };
 		9EECA8B426AD102C002EF2CA /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECA8B326AD102C002EF2CA /* Repository.swift */; };
 		9EECA8B626AD21BD002EF2CA /* Spectator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECA8B526AD21BD002EF2CA /* Spectator.swift */; };
+		9EECA8DF26B3B194002EF2CA /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECA8DE26B3B194002EF2CA /* League.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9EECA8B126AD0E0E002EF2CA /* HTTPNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetwork.swift; sourceTree = "<group>"; };
 		9EECA8B326AD102C002EF2CA /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9EECA8B526AD21BD002EF2CA /* Spectator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spectator.swift; sourceTree = "<group>"; };
+		9EECA8DE26B3B194002EF2CA /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				9EECA8B526AD21BD002EF2CA /* Spectator.swift */,
+				9EECA8DE26B3B194002EF2CA /* League.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EECA8DF26B3B194002EF2CA /* League.swift in Sources */,
 				9EECA8A226AD0D3B002EF2CA /* ViewController.swift in Sources */,
 				9EECA89E26AD0D3B002EF2CA /* AppDelegate.swift in Sources */,
 				9EECA8B426AD102C002EF2CA /* Repository.swift in Sources */,

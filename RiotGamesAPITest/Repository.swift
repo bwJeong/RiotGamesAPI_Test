@@ -14,6 +14,7 @@ struct Repository {
     
     private func summonerId(summonerName: String, completion: @escaping (String) -> Void) {
         let path = "/summoner/v4/summoners/by-name/" + summonerName + "?api_key=\(apiKey)"
+        
         guard let percentEncondedPath = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             fatalError("Percent Encoding Error!")
         }
@@ -28,12 +29,30 @@ struct Repository {
     func spectator(ingameSummonerName: String, completion: @escaping (Spectator) -> Void) {
         summonerId(summonerName: ingameSummonerName) { id in
             let path = "/spectator/v4/active-games/by-summoner/" + id + "?api_key=\(apiKey)"
+            
             httpNetwork.get(path: path) { obj in
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                     let spectator = try JSONDecoder().decode(Spectator.self, from: jsonData)
                     
                     completion(spectator)
+                } catch let err {
+                    print(String(describing: err))
+                }
+            }
+        }
+    }
+    
+    func leagues(summonerName: String, completion: @escaping ([League]) -> Void) {
+        summonerId(summonerName: summonerName) { id in
+            let path = "/league/v4/entries/by-summoner/" + id + "?api_key=\(apiKey)"
+            
+            httpNetwork.get(path: path) { obj in
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                    let leagues = try JSONDecoder().decode([League].self, from: jsonData)
+                    
+                    completion(leagues)
                 } catch let err {
                     print(String(describing: err))
                 }
